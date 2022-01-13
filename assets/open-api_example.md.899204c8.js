@@ -1,54 +1,36 @@
-<!DOCTYPE html>
-<html lang="en-US">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Python请求代码示例 | OPEN API</title>
-    <meta name="description" content="A VitePress site">
-    <link rel="stylesheet" href="/openapi-document/assets/style.49eed234.css">
-    <link rel="modulepreload" href="/openapi-document/assets/Home.2856ded2.js">
-    <link rel="modulepreload" href="/openapi-document/assets/app.6d6de8d6.js">
-    <link rel="modulepreload" href="/openapi-document/assets/open-api_example.md.899204c8.lean.js">
-    
-    <meta name="keywords" content="数据中台部门 OPEN API">
-  <meta name="description" content="数据中台部门">
-  <meta name="twitter:title" content="Python请求代码示例 | OPEN API">
-  <meta property="og:title" content="Python请求代码示例 | OPEN API">
-  </head>
-  <body>
-    <div id="app"><!--[--><div class="theme"><header class="nav-bar" data-v-675d8756><div class="sidebar-button" data-v-675d8756><svg class="icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z" class></path></svg></div><a class="nav-bar-title" href="/openapi-document/" aria-label="OPEN API, back to home" data-v-675d8756 data-v-cc01ef16><!----> OPEN API</a><div class="flex-grow" data-v-675d8756></div><div class="nav" data-v-675d8756><nav class="nav-links" data-v-675d8756 data-v-eab3edfe><!--[--><div class="item" data-v-eab3edfe><div class="nav-link" data-v-eab3edfe data-v-b8818f8c><a class="item active" href="/openapi-document/" data-v-b8818f8c>介绍 <!----></a></div></div><div class="item" data-v-eab3edfe><div class="nav-link" data-v-eab3edfe data-v-b8818f8c><a class="item isExternal" href="https://seer.go.akamai-access.com/modules/openapiinterface/openapiinterfaceList" target="_blank" rel="noopener noreferrer" data-v-b8818f8c>预览地址 <svg class="icon outbound" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15" data-v-b8818f8c><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div></div><div class="item" data-v-eab3edfe><div class="nav-link" data-v-eab3edfe data-v-b8818f8c><a class="item isExternal" href="https://fttp.jjf-tech.cn/vitepress/guide/markdown.html" target="_blank" rel="noopener noreferrer" data-v-b8818f8c>Markdown示例 <svg class="icon outbound" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15" data-v-b8818f8c><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div></div><!--]--><!----><!----></nav></div><!--[--><!--]--></header><aside class="sidebar" data-v-83e92a68><nav class="nav-links nav" data-v-83e92a68 data-v-eab3edfe><!--[--><div class="item" data-v-eab3edfe><div class="nav-link" data-v-eab3edfe data-v-b8818f8c><a class="item active" href="/openapi-document/" data-v-b8818f8c>介绍 <!----></a></div></div><div class="item" data-v-eab3edfe><div class="nav-link" data-v-eab3edfe data-v-b8818f8c><a class="item isExternal" href="https://seer.go.akamai-access.com/modules/openapiinterface/openapiinterfaceList" target="_blank" rel="noopener noreferrer" data-v-b8818f8c>预览地址 <svg class="icon outbound" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15" data-v-b8818f8c><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div></div><div class="item" data-v-eab3edfe><div class="nav-link" data-v-eab3edfe data-v-b8818f8c><a class="item isExternal" href="https://fttp.jjf-tech.cn/vitepress/guide/markdown.html" target="_blank" rel="noopener noreferrer" data-v-b8818f8c>Markdown示例 <svg class="icon outbound" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15" data-v-b8818f8c><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div></div><!--]--><!----><!----></nav><!--[--><!--]--><ul class="sidebar-links" data-v-83e92a68><!--[--><li class="sidebar-link"><p class="sidebar-link-item">介绍</p><ul class="sidebar-links"><li class="sidebar-link"><a class="sidebar-link-item" href="/openapi-document/">什么是Open Api ?</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="/openapi-document/open-api/start">开始使用</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item active" href="/openapi-document/open-api/example">代码示例</a><!----></li><li class="sidebar-link"><p class="sidebar-link-item">一级菜单</p><ul class="sidebar-links"><li class="sidebar-link"><a class="sidebar-link-item" href="/openapi-document/open-api/sub">子级菜单</a><!----></li></ul></li></ul></li><!--]--></ul><!--[--><!--]--></aside><div class="sidebar-mask"></div><main class="page" data-v-7eddb2c4><div class="container" data-v-7eddb2c4><!--[--><!--]--><div style="position:relative;" class="content" data-v-7eddb2c4><div><h3 id="python请求代码示例" tabindex="-1">Python请求代码示例 <a class="header-anchor" href="#python请求代码示例" aria-hidden="true">#</a></h3><div class="language-python"><pre><code><span class="token keyword">import</span> requests
+import{_ as n,c as s,o as a,d as t}from"./app.6d6de8d6.js";const y='{"title":"Python\u8BF7\u6C42\u4EE3\u7801\u793A\u4F8B","description":"","frontmatter":{},"headers":[{"level":3,"title":"Python\u8BF7\u6C42\u4EE3\u7801\u793A\u4F8B","slug":"python\u8BF7\u6C42\u4EE3\u7801\u793A\u4F8B"}],"relativePath":"open-api/example.md","lastUpdated":1642059710911}',p={},o=t(`<h3 id="python\u8BF7\u6C42\u4EE3\u7801\u793A\u4F8B" tabindex="-1">Python\u8BF7\u6C42\u4EE3\u7801\u793A\u4F8B <a class="header-anchor" href="#python\u8BF7\u6C42\u4EE3\u7801\u793A\u4F8B" aria-hidden="true">#</a></h3><div class="language-python"><pre><code><span class="token keyword">import</span> requests
 <span class="token keyword">import</span> hashlib
 <span class="token keyword">from</span> datetime <span class="token keyword">import</span> datetime
 <span class="token keyword">from</span> math <span class="token keyword">import</span> trunc
 
-<span class="token comment">###填充参数部分</span>
+<span class="token comment">###\u586B\u5145\u53C2\u6570\u90E8\u5206</span>
 <span class="token comment">################################################</span>
-<span class="token comment"># 业务组 key</span>
+<span class="token comment"># \u4E1A\u52A1\u7EC4 key</span>
 appId <span class="token operator">=</span> <span class="token string">&quot;XXXXXXXXXXXX&quot;</span>
 
-<span class="token comment"># 业务组 secret key</span>
+<span class="token comment"># \u4E1A\u52A1\u7EC4 secret key</span>
 appSecret <span class="token operator">=</span> <span class="token string">&quot;XXXXXXXXXXX&quot;</span>
 
-<span class="token comment"># 请求路径，example：/affliate/list</span>
+<span class="token comment"># \u8BF7\u6C42\u8DEF\u5F84\uFF0Cexample\uFF1A/affliate/list</span>
 api_path <span class="token operator">=</span> <span class="token string">&quot;/affliate/list&quot;</span>
 
-<span class="token comment"># 请求host</span>
+<span class="token comment"># \u8BF7\u6C42host</span>
 host <span class="token operator">=</span> <span class="token string">&quot;http://de-openapi.prod.cht.ww5sawfyut0k.bitsvc.io&quot;</span>
 
-<span class="token comment"># 请求参数</span>
+<span class="token comment"># \u8BF7\u6C42\u53C2\u6570</span>
 req_body <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">&quot;params&quot;</span><span class="token punctuation">:</span><span class="token punctuation">{</span><span class="token string">&quot;affiliate_id&quot;</span><span class="token punctuation">:</span><span class="token string">&quot;783&quot;</span><span class="token punctuation">}</span><span class="token punctuation">}</span>
 <span class="token comment">################################################</span>
 
 
-<span class="token comment"># 秒级时间戳</span>
+<span class="token comment"># \u79D2\u7EA7\u65F6\u95F4\u6233</span>
 dt <span class="token operator">=</span> datetime<span class="token punctuation">.</span>now<span class="token punctuation">(</span><span class="token punctuation">)</span>
 timestamp <span class="token operator">=</span> <span class="token builtin">str</span><span class="token punctuation">(</span>trunc<span class="token punctuation">(</span>dt<span class="token punctuation">.</span>timestamp<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 
-<span class="token comment"># 计算签名</span>
+<span class="token comment"># \u8BA1\u7B97\u7B7E\u540D</span>
 sign_str <span class="token operator">=</span> <span class="token string">&quot;%s+%s+%s&quot;</span> <span class="token operator">%</span> <span class="token punctuation">(</span>appId<span class="token punctuation">,</span> timestamp<span class="token punctuation">,</span> appSecret<span class="token punctuation">)</span>
 sign <span class="token operator">=</span> hashlib<span class="token punctuation">.</span>sha1<span class="token punctuation">(</span>sign_str<span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token string">&quot;utf8&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>hexdigest<span class="token punctuation">(</span><span class="token punctuation">)</span>
 
-<span class="token comment"># 生成headers</span>
+<span class="token comment"># \u751F\u6210headers</span>
 headers <span class="token operator">=</span> <span class="token punctuation">{</span>
     <span class="token string">&quot;AppKeyId&quot;</span><span class="token punctuation">:</span> appId<span class="token punctuation">,</span>
     <span class="token string">&quot;Timestamp&quot;</span><span class="token punctuation">:</span> timestamp<span class="token punctuation">,</span>
@@ -56,7 +38,7 @@ headers <span class="token operator">=</span> <span class="token punctuation">{<
     <span class="token string">&quot;Content-Type&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;application/json&quot;</span>
 <span class="token punctuation">}</span>
 
-<span class="token comment"># 组合url</span>
+<span class="token comment"># \u7EC4\u5408url</span>
 url <span class="token operator">=</span> host <span class="token operator">+</span> <span class="token string">&quot;/open-api/queryData&quot;</span> <span class="token operator">+</span> api_path
 
 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;url:&quot;</span><span class="token punctuation">,</span> url<span class="token punctuation">)</span>
@@ -67,8 +49,8 @@ url <span class="token operator">=</span> host <span class="token operator">+</s
     response <span class="token operator">=</span> requests<span class="token punctuation">.</span>post<span class="token punctuation">(</span>url<span class="token operator">=</span>url<span class="token punctuation">,</span> headers<span class="token operator">=</span>headers<span class="token punctuation">,</span> json<span class="token operator">=</span>req_body<span class="token punctuation">)</span>
     <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;response:&quot;</span><span class="token punctuation">,</span> response<span class="token punctuation">.</span>json<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 <span class="token keyword">except</span> Exception <span class="token keyword">as</span> e<span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;Exception when calling api: %s \n&quot;</span> <span class="token operator">%</span> e<span class="token punctuation">)</span>
-</code></pre></div><h4 id="java请求代码示例" tabindex="-1">Java请求代码示例 <a class="header-anchor" href="#java请求代码示例" aria-hidden="true">#</a></h4><div class="language-java"><pre><code>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;Exception when calling api: %s \\n&quot;</span> <span class="token operator">%</span> e<span class="token punctuation">)</span>
+</code></pre></div><h4 id="java\u8BF7\u6C42\u4EE3\u7801\u793A\u4F8B" tabindex="-1">Java\u8BF7\u6C42\u4EE3\u7801\u793A\u4F8B <a class="header-anchor" href="#java\u8BF7\u6C42\u4EE3\u7801\u793A\u4F8B" aria-hidden="true">#</a></h4><div class="language-java"><pre><code>
 <span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>apache<span class="token punctuation">.</span>commons<span class="token punctuation">.</span>codec<span class="token punctuation">.</span>digest<span class="token punctuation">.</span></span><span class="token class-name">DigestUtils</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>apache<span class="token punctuation">.</span>commons<span class="token punctuation">.</span>lang3<span class="token punctuation">.</span></span><span class="token class-name">StringUtils</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>apache<span class="token punctuation">.</span>http<span class="token punctuation">.</span></span><span class="token class-name">HttpEntity</span><span class="token punctuation">;</span>
@@ -85,36 +67,36 @@ url <span class="token operator">=</span> host <span class="token operator">+</s
 <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Demo</span> <span class="token punctuation">{</span>
 
     <span class="token comment">/**
-     * 业务组app key
+     * \u4E1A\u52A1\u7EC4app key
      */</span>
     <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token class-name">String</span> appId <span class="token operator">=</span> <span class="token string">&quot;XXXXXXXXXX&quot;</span><span class="token punctuation">;</span>
 
     <span class="token comment">/**
-     * 业务组app secret key
+     * \u4E1A\u52A1\u7EC4app secret key
      */</span>
     <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token class-name">String</span> appSecret <span class="token operator">=</span> <span class="token string">&quot;XXXXXXXXXX&quot;</span><span class="token punctuation">;</span>
 
     <span class="token comment">/**
-     * 节点host
+     * \u8282\u70B9host
      */</span>
     <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token class-name">String</span> host <span class="token operator">=</span> <span class="token string">&quot;http://de-openapi.prod.cht.ww5sawfyut0k.bitsvc.io&quot;</span><span class="token punctuation">;</span>
 
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token comment">// 请求路径, 替换成要请求的接口</span>
+        <span class="token comment">// \u8BF7\u6C42\u8DEF\u5F84, \u66FF\u6362\u6210\u8981\u8BF7\u6C42\u7684\u63A5\u53E3</span>
         <span class="token class-name">String</span> apiPath <span class="token operator">=</span> <span class="token string">&quot;/affliate/list&quot;</span><span class="token punctuation">;</span>
 
-        <span class="token comment">// 秒级时间戳</span>
+        <span class="token comment">// \u79D2\u7EA7\u65F6\u95F4\u6233</span>
         <span class="token class-name">String</span> timestamp <span class="token operator">=</span> <span class="token class-name">String</span><span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span><span class="token class-name">System</span><span class="token punctuation">.</span><span class="token function">currentTimeMillis</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        <span class="token comment">// 请求参数body</span>
-        <span class="token class-name">String</span> requestBody <span class="token operator">=</span> <span class="token string">&quot;{\&quot;params\&quot;:{\&quot;affiliate_id\&quot;:\&quot;783\&quot;}}&quot;</span><span class="token punctuation">;</span>
+        <span class="token comment">// \u8BF7\u6C42\u53C2\u6570body</span>
+        <span class="token class-name">String</span> requestBody <span class="token operator">=</span> <span class="token string">&quot;{\\&quot;params\\&quot;:{\\&quot;affiliate_id\\&quot;:\\&quot;783\\&quot;}}&quot;</span><span class="token punctuation">;</span>
 
 
         <span class="token function">executeRequest</span><span class="token punctuation">(</span>timestamp<span class="token punctuation">,</span> apiPath<span class="token punctuation">,</span> requestBody<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">executeRequest</span><span class="token punctuation">(</span><span class="token class-name">String</span> timestamp<span class="token punctuation">,</span> <span class="token class-name">String</span> apiPath<span class="token punctuation">,</span> <span class="token class-name">String</span> requestBody<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token comment">// 计算签名</span>
+        <span class="token comment">// \u8BA1\u7B97\u7B7E\u540D</span>
         <span class="token class-name">String</span> authStr <span class="token operator">=</span> <span class="token class-name">StringUtils</span><span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>appId<span class="token punctuation">,</span> <span class="token string">&quot;+&quot;</span><span class="token punctuation">,</span> timestamp<span class="token punctuation">,</span> <span class="token string">&quot;+&quot;</span> <span class="token operator">+</span> appSecret<span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token class-name">String</span> sign <span class="token operator">=</span> <span class="token class-name">DigestUtils</span><span class="token punctuation">.</span><span class="token function">sha1Hex</span><span class="token punctuation">(</span>authStr<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
@@ -124,35 +106,30 @@ url <span class="token operator">=</span> host <span class="token operator">+</s
         post<span class="token punctuation">.</span><span class="token function">addHeader</span><span class="token punctuation">(</span> <span class="token string">&quot;Timestamp&quot;</span> <span class="token punctuation">,</span> timestamp<span class="token punctuation">)</span><span class="token punctuation">;</span>
         post<span class="token punctuation">.</span><span class="token function">addHeader</span><span class="token punctuation">(</span> <span class="token string">&quot;Sign&quot;</span> <span class="token punctuation">,</span> sign<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        <span class="token comment">// 请求体</span>
+        <span class="token comment">// \u8BF7\u6C42\u4F53</span>
         <span class="token keyword">try</span> <span class="token punctuation">{</span>
             post<span class="token punctuation">.</span><span class="token function">setEntity</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">StringEntity</span><span class="token punctuation">(</span>requestBody<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">UnsupportedEncodingException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
             e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
 
-        <span class="token comment">// 执行请求</span>
+        <span class="token comment">// \u6267\u884C\u8BF7\u6C42</span>
         <span class="token keyword">try</span> <span class="token punctuation">(</span><span class="token class-name">CloseableHttpClient</span> httpClient <span class="token operator">=</span> <span class="token class-name">HttpClients</span><span class="token punctuation">.</span><span class="token function">createDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
             <span class="token class-name">CloseableHttpResponse</span> response <span class="token operator">=</span> httpClient<span class="token punctuation">.</span><span class="token function">execute</span><span class="token punctuation">(</span>post<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
             <span class="token class-name">String</span> result<span class="token punctuation">;</span>
             <span class="token keyword">if</span> <span class="token punctuation">(</span>response<span class="token punctuation">.</span><span class="token function">getStatusLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getStatusCode</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token class-name">HttpStatus</span><span class="token punctuation">.</span>SC_OK<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                <span class="token comment">// 从响应模型中获取响应实体</span>
+                <span class="token comment">// \u4ECE\u54CD\u5E94\u6A21\u578B\u4E2D\u83B7\u53D6\u54CD\u5E94\u5B9E\u4F53</span>
                 <span class="token class-name">HttpEntity</span> responseEntity <span class="token operator">=</span> response<span class="token punctuation">.</span><span class="token function">getEntity</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
                 <span class="token keyword">if</span> <span class="token punctuation">(</span>responseEntity <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
                     result <span class="token operator">=</span> <span class="token class-name">EntityUtils</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span>responseEntity<span class="token punctuation">,</span> <span class="token string">&quot;UTF-8&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
                     <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token punctuation">;</span>
                 <span class="token punctuation">}</span>
             <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-                <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;http status：&quot;</span> <span class="token operator">+</span> response<span class="token punctuation">.</span><span class="token function">getStatusLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getStatusCode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;http status\uFF1A&quot;</span> <span class="token operator">+</span> response<span class="token punctuation">.</span><span class="token function">getStatusLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getStatusCode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
             <span class="token punctuation">}</span>
         <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">Exception</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
             e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
   <span class="token punctuation">}</span>
-</code></pre></div></div></div><footer class="page-footer" data-v-7eddb2c4 data-v-fb8d84c6><div class="edit" data-v-fb8d84c6><div class="edit-link" data-v-fb8d84c6 data-v-1ed99556><!----></div></div><div class="updated" data-v-fb8d84c6><!----></div></footer><div class="next-and-prev-link" data-v-7eddb2c4 data-v-38ede35f><div class="container" data-v-38ede35f><div class="prev" data-v-38ede35f><a class="link" href="/openapi-document/open-api/start" data-v-38ede35f><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" class="icon icon-prev" data-v-38ede35f><path d="M19,11H7.4l5.3-5.3c0.4-0.4,0.4-1,0-1.4s-1-0.4-1.4,0l-7,7c-0.1,0.1-0.2,0.2-0.2,0.3c-0.1,0.2-0.1,0.5,0,0.8c0.1,0.1,0.1,0.2,0.2,0.3l7,7c0.2,0.2,0.5,0.3,0.7,0.3s0.5-0.1,0.7-0.3c0.4-0.4,0.4-1,0-1.4L7.4,13H19c0.6,0,1-0.4,1-1S19.6,11,19,11z"></path></svg><span class="text" data-v-38ede35f>开始使用</span></a></div><div class="next" data-v-38ede35f><a class="link" href="/openapi-document/open-api/sub" data-v-38ede35f><span class="text" data-v-38ede35f>子级菜单</span><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" class="icon icon-next" data-v-38ede35f><path d="M19.9,12.4c0.1-0.2,0.1-0.5,0-0.8c-0.1-0.1-0.1-0.2-0.2-0.3l-7-7c-0.4-0.4-1-0.4-1.4,0s-0.4,1,0,1.4l5.3,5.3H5c-0.6,0-1,0.4-1,1s0.4,1,1,1h11.6l-5.3,5.3c-0.4,0.4-0.4,1,0,1.4c0.2,0.2,0.5,0.3,0.7,0.3s0.5-0.1,0.7-0.3l7-7C19.8,12.6,19.9,12.5,19.9,12.4z"></path></svg></a></div></div></div><!--[--><!--]--></div></main></div><!----><!--]--></div>
-    <script>__VP_HASH_MAP__ = JSON.parse("{\"index.md\":\"66822321\",\"open-api_example.md\":\"899204c8\",\"open-api_index.md\":\"717c574b\",\"open-api_start.md\":\"4a89c4c3\",\"open-api_sub.md\":\"dc057bf4\",\"open-api_testcode.md\":\"b9b1e8a6\"}")</script>
-    <script type="module" async src="/openapi-document/assets/app.6d6de8d6.js"></script>
-    
-  </body>
-</html>
+</code></pre></div>`,4),c=[o];function e(u,l,k,i,r,m){return a(),s("div",null,c)}var g=n(p,[["render",e]]);export{y as __pageData,g as default};
