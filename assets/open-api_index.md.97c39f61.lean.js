@@ -1,0 +1,1 @@
+import{_ as n,c as a,o as s,d as t}from"./app.5f61ba59.js";const h='{"title":"open-api.md","description":"","frontmatter":{},"headers":[],"relativePath":"open-api/index.md","lastUpdated":1642057849056}',p={},e=t("",7),o=[e];function r(c,l,i,u,k,d){return s(),a("div",null,o)}var g=n(p,[["render",r]]);export{h as __pageData,g as default};
